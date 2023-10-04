@@ -7,7 +7,7 @@ public class hollow_rectangle {
             for(int j =1;j<=totcols;j++){
                 // cell-(i,j)
                 if (i==1||i==totrow || j==1 || j== totcols){
-                    System.out.print(" * ");
+                    System.out.print("*");
                 }else {
                     System.out.print(" ");
                 }
