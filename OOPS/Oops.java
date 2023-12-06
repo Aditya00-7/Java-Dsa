@@ -7,8 +7,16 @@ public class Oops {
         System.out.println(p1.color);
         Student s1 = new Student("Shradha");
         System.out.println(s1.name);
+
+        Horse h = new Horse();
+        h.eat();
+        h.walk();
+
+        Chiken c = new Chiken();
+        c.eat();
+        c.walk();
     }
-}
+    }
 
 class Student{
     String name;
@@ -25,5 +33,23 @@ class Pen{
     }
     void setTip(int newTip){
         tip =newTip;
+    }
+}
+abstract class Animal{
+    void eat(){
+        System.out.println("animal Eats");
+    }
+    abstract void walk();
+}
+class Horse extends Animal{
+    @Override
+    void walk() {
+        System.out.println("walks on 4 legs");
+    }
+}
+class Chiken extends Animal{
+    @Override
+    void walk() {
+        System.out.println("walks on 2 legs");
     }
 }
