@@ -15,8 +15,10 @@ public class Oops {
         Chiken c = new Chiken();
         c.eat();
         c.walk();
+        Queen q= new Queen();
+        q.moves();
     }
-    }
+}
 
 class Student{
     String name;
@@ -51,5 +53,20 @@ class Chiken extends Animal{
     @Override
     void walk() {
         System.out.println("walks on 2 legs");
+    }
+}
+interface ChessPlayer{
+    void moves();
+}
+class Queen implements ChessPlayer{
+    @Override
+    public void moves() {
+        System.out.println("up,down,left,right,diagonal(all 4 direction)");
+    }
+}
+class rook implements ChessPlayer{
+    @Override
+    public void moves() {
+        System.out.println("up,down,left,right");
     }
 }
