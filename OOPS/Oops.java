@@ -7,7 +7,9 @@ public class Oops {
         System.out.println(p1.color);
         Student s1 = new Student("Shradha");
         System.out.println(s1.name);
-
+        s1.schoolName = "jmv";
+        Student s2 =new Student("ash");
+        System.out.println(s2.schoolName);
         Horse h = new Horse();
         h.eat();
         h.walk();
@@ -23,8 +25,15 @@ public class Oops {
 class Student{
     String name;
     int roll;
+    static String schoolName;
     Student(String name){
         this.name= name;
+   }
+    void setName(String Name){
+        this.name =name;
+    }
+    String getName(){
+        return this.name;
     }
 }
 class Pen{
@@ -44,6 +53,10 @@ abstract class Animal{
     abstract void walk();
 }
 class Horse extends Animal{
+    Horse(){
+        super();
+        System.out.println("horse constructor is called");
+    }
     @Override
     void walk() {
         System.out.println("walks on 4 legs");
