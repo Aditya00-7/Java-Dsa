@@ -54,6 +54,25 @@ public class RecursionBasics {
       }
       return isSorted(arr, i+1);
     }
+    public static int firstOccurence(int arr[],int key, int i){
+        if(i== arr.length){
+            return -1;
+        }
+        if(arr[i]== key){
+            return i;
+        }
+        return firstOccurence(arr,key,i+1);
+    }
+    public static int lastOccurance(int arr[],int key, int i){
+        if(i== arr.length){
+            return -1;
+        }
+        int isFound = lastOccurance(arr, key, i+1);
+        if(isFound == -1 && arr[i]==key){
+            return i;
+        }
+        return isFound;
+    }
     public static void main(String[] args){
         int n =25;
         printDec(n);
@@ -61,7 +80,9 @@ public class RecursionBasics {
         System.out.println(fact(n));
         System.out.println(CalSum(n));
         System.out.println(fib(n));
-        int arr[] ={1,3,4,9,0,2,8,10};
+        int arr[] ={1,3,4,9,0,2,6,3,4,1,8,10};
         System.out.println(isSorted(arr,0));
+        System.out.println(firstOccurence(arr,1,0));
+        System.out.println(lastOccurance(arr,1,0));
     }
 }
