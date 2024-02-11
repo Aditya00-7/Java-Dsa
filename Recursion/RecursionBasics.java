@@ -83,6 +83,16 @@ public class RecursionBasics {
         //or
         // return x * power(x,n-1);
     }
+    public static boolean alloccurance(int[] arr, int key, int i){
+        if (i == arr.length){
+            return false;
+        }
+        if(arr[i]== key){
+            System.out.print( i+" ");
+        }
+        alloccurance(arr, key, i+1);
+        return false;
+    }
     public static void main(String[] args){
         int n =25;
         printDec(n);
@@ -95,5 +105,6 @@ public class RecursionBasics {
         System.out.println(firstOccurence(arr,1,0));
         System.out.println(lastOccurance(arr,1,0));
         System.out.println(power(2,10));
+        System.out.println(alloccurance(arr,3,0));
     }
 }
