@@ -17,7 +17,7 @@ public class Hanoiprblm {
         towerofHanoi(n-1,aux_rod,to_rod ,from_rod);
     }
     public static void main(String[] args) {
-        towerofHanoi(4,'A','B','C');
+        towerofHanoi(9,'A','B','C');
 
 
     }
