@@ -16,7 +16,7 @@ public class practice {
             return invCount ;
         }
         public static void main(String[]args){
-            int arr[] = {1,20,6,4,5};
+            int arr[] = {1,20,7,6,4,5};
             System.out.println("Inversion Count = "+getInvCount(arr));
         }
     }
