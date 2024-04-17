@@ -3,6 +3,7 @@ package Linkedlist;
 import java.util.LinkedList;
 
 public class linkedlist {
+
     public static class Node{
         int data;
         Node next;
@@ -106,6 +107,63 @@ public class linkedlist {
         size--;
         return val;
     }
+    // unable to call from the main function
+    public int itrsearch(int key){
+        Node temp = head;
+        int i = 0;
+        while(temp!= null){
+            if (temp.data == key){
+                // key found
+                return i;
+            }
+            temp =temp.next;
+            i++;
+        }
+        //key not found
+        return -1;
+    }
+    // unable to call from the main function
+    public int helper(Node head,int key){
+        if (head == null){
+            return -1;
+        }
+        if (head.data == key){
+            return 0;
+        }
+        int idx = helper(head.next,key);
+        if (idx == -1) {
+            return -1;
+        }
+        return idx+1;
+    }
+    public int search(int key){
+        return helper(head,key);
+    }
+
+    // unable to call from the main function
+    public void  reverse(){
+        Node prev = null;
+        Node curr = tail= head;
+        Node next;
+
+        while (curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr= next;
+        }
+        head = prev;
+    }
+    public Node findMid(Node head){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next; //+1
+            fast = fast.next.next;//+2
+        }
+        return slow;
+    }
     public static void main(String args[]){
         LinkedList Ll = new LinkedList ();
         Ll.addFirst(2);
@@ -119,6 +177,8 @@ public class linkedlist {
         Ll.removeFirst();
         System.out.println(Ll);
         Ll.removeLast();
+        System.out.println(Ll);
+        //Ll.reverse();
         System.out.println(Ll);
 
     }
