@@ -1,6 +1,8 @@
 package Linkedlist;
 import java.util.LinkedList;
 
+import static Linkedlist.Doublell.Node.head;
+
 public class Doublell {
     private boolean size;
 
@@ -28,7 +30,9 @@ public class Doublell {
             head.prev = newNode;
             head = newNode;
         }
-        // print
+    }
+
+    // print
         public void print(){
             Node temp = head;
             while (temp != null){
@@ -37,15 +41,30 @@ public class Doublell {
             }
             System.out.println("null");
         }
-    }
+        public void reverse(){
+            Node curr = head;
+            Node prev = null;
+            Node next;
+            while(curr != null){
+                next= curr.next;
+                curr.next = prev;
+                curr.prev = next;
+
+                prev= curr;
+                curr = next;
+            }
+            head = prev;
+        }
 
     public static void main(String[] args) {
         Doublell dll = new Doublell();
         dll.addFirst(3);
         dll.addFirst(2);
         dll.addFirst(1);
-       // dll.print();
-       // System.out.println(dll.size);
+        dll.print();
+        System.out.println(dll.size);
+        dll.reverse();
+        dll.print();
     }
 
     private void addFirst(int i) {
