@@ -1,3 +1,5 @@
+package Queue;
+
 import com.sun.source.tree.NewArrayTree;
 
 public class QueueB {

@@ -1,3 +1,5 @@
+package Queue;
+
 public class circularQueue {
     static class Queue{
         static int arr[];
