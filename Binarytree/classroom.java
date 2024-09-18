@@ -38,6 +38,42 @@ public class classroom {
         return leftsum+rightsum+ root.data;
         }
 
+// approch 1 to calculate diameter
+        public static int diameter2(Node root){
+        if (root==null){
+            return 0;
+          }
+              int leftdiam = diameter2(root.left);
+            int leftht = height(root.left);
+            int rightdiam = diameter2(root.right);
+            int rightht = height(root.right);
+
+            int selfdiam = leftht+ rightht+1;
+            return Math.max(selfdiam,Math.max(leftdiam,rightdiam));
+        }
+
+    // approch 2 to calculate diameter
+
+    static class Info{
+        int diam;
+        int ht;
+        public Info(int diam,int ht){
+            this.diam = diam;
+            this.diam =ht;
+        }
+    }
+     public static Info diamter(Node root){
+        if (root==null){
+            return new Info(0,0);
+        }
+         Info leftInfo = diamter(root.left);
+         Info rightInfo = diamter(root.right);
+
+         int diam = Math.max(Math.max(leftInfo.diam,rightInfo.diam),leftInfo.ht+rightInfo.ht+1);
+         int ht = Math.max(leftInfo.ht, rightInfo.ht)+1;
+         return new Info(diam,ht);
+    }
+
     public static void main(String[] args) {
         /*
               1
@@ -58,6 +94,12 @@ public class classroom {
         System.out.println(height(root));
         System.out.println(count(root));
         System.out.println(sum(root));
+        System.out.println(diameter2(root));
+
+        //something is wrong
+        System.out.println(height(root));
+        System.out.println(diamter(root).diam);
+
 
     }
 }
