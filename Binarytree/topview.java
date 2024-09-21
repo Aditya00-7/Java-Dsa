@@ -60,6 +60,21 @@ public class topview {
          System.out.println( );
 
      }
+      public static void Klevel(Node root, int level,int k){
+        if (root == null){
+            return;
+        }
+        if (level==k){
+            System.out.print(root.data+" ");
+            return;
+        }
+        Klevel(root.left,level+1,k);
+          Klevel(root.right,level+1,k);
+      }
+
+
+
+
 
      public static void main(String[] args) {
         /*
@@ -78,5 +93,8 @@ public class topview {
             root.right.right = new Node(7);
 
             topview(root);
+
+            int k = 2;
+            Klevel(root,1,k);
     }
 }
