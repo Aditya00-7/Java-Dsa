@@ -1,5 +1,5 @@
 package BST;
-
+import java.util.*;
 public class Classroom {
     static class Node{
         int data;
@@ -96,6 +96,36 @@ public class Classroom {
             printinrange(root.right,k1,k2);
         }
     }
+    public static void printpath(ArrayList<Integer>path){
+        for (int i=0;i< path.size();i++){
+            System.out.print(path.get(i)+"->");
+        }
+        System.out.println("Null");
+    }
+    public static void printroot2leaf(Node root,ArrayList<Integer>path){
+        if (root==null){
+            return;
+        }
+        path.add(root.data);
+        if (root.left == null && root.right == null){
+            printpath(path);
+        }
+        printroot2leaf(root.left,path);
+        printroot2leaf(root.right,path);
+        path.remove(path.size()-1);
+    }
+    public static boolean isvalidbst(Node root, Node min,Node max){
+        if (root== null){
+            return true;
+        }
+        if (min != null&& root.data<= min.data){
+            return false;
+        } else if (max != null&& root.data<= max.data) {
+            return false;
+        }
+        return isvalidbst(root.left,min,root)&&
+                isvalidbst(root.right,root,max);
+    }
 
     public static void main(String[] args) {
         int value []= {8,5,3,1,4,6,10,11,12};
@@ -116,6 +146,14 @@ public class Classroom {
         inorder(root);
 
         printinrange(root,5,12);
+
+        printroot2leaf(root,new ArrayList<>());
+
+        if (isvalidbst(root,null,null)){
+            System.out.println("valid");
+        }else {
+            System.out.println("Not Valid");
+        }
 
     }
 
