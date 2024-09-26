@@ -99,7 +99,7 @@ public class mergebst {
         /*   3
             / \
            1   9
-           \  /\       
+           \  /\
            2 4  12
         */
         Node root = mergeBSTs(root1,root2);
