@@ -17,7 +17,7 @@ public class classroomsumk {
             if (map.containsKey(sum-k)){
                 ans += map.get(sum-k);
             }
-            map.put(sum, map.getOrDefault(sum, defaultValue:0) + 1);
+            map.put(sum, map.getOrDefault(sum, + 1));
         }
         System.out.println(ans);
     }
