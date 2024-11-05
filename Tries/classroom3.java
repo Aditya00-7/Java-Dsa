@@ -1,17 +1,16 @@
 package Tries;
 
-public class classroom2 {
+public class classroom3 {
     static class Node{
         Node [] children = new Node[26];
-        boolean eow= false;
-        int freq;
+        boolean eow;
+
         public Node(){
-            for (int i=0;i<children.length;i++){
-                children[i]=null;
+            for (int i=0;i<6;i++){
+               children[i] =null;
             }
         }
     }
-
     public static Node root = new Node();
     public static  void insert(String word){
 
@@ -23,19 +22,18 @@ public class classroom2 {
         for (;level<len;level++){
             idx = word.charAt(level)-'a';
             if (curr.children[idx]== null){
-                curr.children[idx]= new Node();
+                curr.children[idx]=  new Node();
             }
             curr = curr.children[idx];
         }
         curr.eow= true;
     }
-
     public static  boolean search(String key){
         int level =0;
         int len = key.length();
         int idx =0;
 
-        Node curr  = root;
+       Node curr  = root;
         for (;level<len;level++){
             idx = key.charAt(level)-'a';
             if (curr.children[idx]== null){
@@ -45,29 +43,27 @@ public class classroom2 {
         }
         return curr.eow== true;
     }
-    public static boolean startsWith(String prefix){
-        Node curr = root;
-
-        for (int i =0; i<prefix.length();i++){
-            int idx = prefix.charAt(i)-'a';
-            if (curr.children[idx]==null){
-                return false;
-            }
-            curr = curr.children[idx];
+    public static int countNodes(Node root){
+        if (root == null){
+            return 0;
         }
-        return true;
+        int count =0;
+        for (int i=0;i<26;i++){
+            if (root.children[i]!=null){
+                count += countNodes(root.children[i]);
+            }
+        }
+        return count+1;
     }
 
     public static void main(String[] args) {
-        String words[]={"apple","app","mango","man","woman"};
-        String pefix1= "app";
-        String prefix2 = "moon";
+        String str = "ababa"; // ans =10
 
-        for (int i=0; i< words.length;i++){
-            insert(words[i]);
+        // suffix -> insert in trie
+        for (int i=0;i<str.length();i++){
+            String suffix = str.substring(i);
+            insert(suffix);
         }
-        System.out.println(startsWith(pefix1));
-        System.out.println(startsWith(prefix2));
+        System.out.println(countNodes(root));
     }
-
 }
