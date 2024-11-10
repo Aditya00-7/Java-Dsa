@@ -1,5 +1,6 @@
 package GRAPHS;
 
+// helper fuction for not connected  graphs
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -97,6 +98,7 @@ public class dfsclr {
             }
         }
         return false;
+
     }
 
     public static void main(String[] args) {
