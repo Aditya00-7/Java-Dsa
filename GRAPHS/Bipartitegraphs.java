@@ -49,7 +49,6 @@ public class Bipartitegraphs {
             col[i]=-1; // no color
         }
         Queue<Integer> q  =new LinkedList<>();
-
         for (int i=0;i< graph.length;i++){
             if (col[i]==-1){ // bfs
                 q.add(i);

@@ -2,7 +2,6 @@ package GRAPHS;
 import java.util.*;
 public class bipartitegraph {
 
-
     static class Edge{
         int src;
         int dest;
