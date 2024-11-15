@@ -83,7 +83,7 @@ public class dijkstraalgo {
                 }
             }
         }
-        // print all source to vertices shortest dist
+        // print all source to vertices shortest distance
         for (int i=0;i< dist.length;i++){
             System.out.print(dist[i]+"");
         }
