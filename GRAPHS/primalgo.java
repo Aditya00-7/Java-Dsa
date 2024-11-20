@@ -66,7 +66,7 @@ public class primalgo {
                  }
             }
         }
-        System.out.println("fianl(min) cost of MST =" +finalCost);
+        System.out.println("final(min) cost of MST =" +finalCost);
     }
     public static void main(String[] args) {
         int V = 4;
