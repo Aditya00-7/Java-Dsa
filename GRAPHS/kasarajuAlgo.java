@@ -40,6 +40,7 @@ public class kasarajuAlgo {
     }
     public  static  void dfs(ArrayList<Edge>graph[],int curr,boolean vis[]){
         vis [curr] = true;
+        
         System.out.print(curr+" ");
         for(int i=0;i<graph[curr].size();i++){
             Edge e =graph[curr].get(i);
