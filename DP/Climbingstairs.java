@@ -36,7 +36,7 @@ public class Climbingstairs {
         }
         return dp[n];
     }
-
+         // update
     public static void main(String[] args) {
         int n=5;
         int ways[]= new int[n+1];
