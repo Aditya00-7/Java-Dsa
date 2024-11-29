@@ -26,7 +26,7 @@ public class Climbingstairs {
         int dp[]= new int[n+1];
         dp[0]=1;
 
-        // tabulation loop
+        // tabulation loop written
         for (int i=1;i<=n;i++){
             if (i==1){
                 dp[i]=dp[i-1]+0;
