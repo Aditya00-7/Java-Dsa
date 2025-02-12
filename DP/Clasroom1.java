@@ -22,7 +22,7 @@ public class Clasroom1 { //  O(n)
         return dp[n];
     }
     public static void main(String[] args) {
-        int n =5;
+        int n =9;
         int f[] = new int[n+1];
         System.out.println(fib(n,f));
         System.out.println(FibTabulation(n));
