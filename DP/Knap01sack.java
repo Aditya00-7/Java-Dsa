@@ -23,7 +23,6 @@ public class Knap01sack {
              // return knapsack(val,wt,W,n-1,dp);for recursion
         }
     }
-
     public static void main(String[] args) {
         int val[]={5,14,10,45,30};
         int wt[] = {2,5,1,3,4};
