@@ -18,7 +18,7 @@ public class unboundedknapsack {
                 }else {
                     dp[i][j]= dp[i-1][j];
                 }
-            }
+             }
         }
         return dp[n][W];
     }
