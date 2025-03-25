@@ -13,9 +13,9 @@ public class mcmRec {
             int finalCost = cost1+cost2+cost3;
             ans = Math.min(ans,finalCost);
         }
+
         return ans; // mincost
     }
-
 
     public static void main(String[] args) {
         int arr [ ] = {1,2,3,4,3};
